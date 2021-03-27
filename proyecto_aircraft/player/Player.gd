@@ -1,6 +1,6 @@
 extends KinematicBody
 
-
+var velocidad 
 
 var turn_speed = 30
 var speed = 10
@@ -17,7 +17,9 @@ func _physics_process(delta):
 
 #    $CameraRig.rotation_degrees.z = -rot_z
 
-	move_and_collide(-transform.basis.z * speed * delta)
+	if velocidad:
+		morir()
+	velocidad = move_and_collide(-transform.basis.z * speed * delta)
 
 func get_input(delta):
 	if Input.is_action_pressed("W"):
@@ -32,3 +34,8 @@ func get_input(delta):
 		rot_z += turn_speed * delta
 	if Input.is_action_pressed("E"):
 		rot_z += -turn_speed * delta
+		
+
+func morir():
+	print ("muero")		
+		
