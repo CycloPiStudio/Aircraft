@@ -6,5 +6,6 @@
 [node name="Principal" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 270.476 )
 
 [node name="Terreno" parent="." instance=ExtResource( 2 )]
